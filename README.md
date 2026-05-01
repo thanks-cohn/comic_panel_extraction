@@ -9,13 +9,14 @@
 
 ~~~
 
-# COMICA — OBJECT SVG ENGINE
+# COMICA — Comic Panel Extraction & Layout Engine
 
+## PDF / IMAGE → STRUCTURED COMIC LAYOUT (SVG + JSON)
 
-# PDF / IMAGE → STRUCTURED COMIC LAYOUT
+Comic panel extraction tool for PDF and images.  
+COMICA performs comic segmentation, panel detection, and layout reconstruction, outputting structured SVG and JSON for datasets, analysis, and tooling.
 
-
-
+Keywords: comic panel extraction, comic segmentation, panel detection, comic layout analysis, PDF comic parser, comic dataset generation
 
 "Structure, not noise."
 
@@ -30,14 +31,14 @@ Not visually.
 
 Structurally.
 
-It identifies panels, preserves their geometry, and rebuilds the page
-as a system of objects instead of a flat image.
+It performs **comic panel extraction and segmentation**, identifying panels,
+preserving their geometry, and rebuilding the page as a system of objects.
 
 Each page becomes something you can:
-  • inspect
-  • move
-  • reuse
-  • rebuild
+  • inspect  
+  • move  
+  • reuse  
+  • rebuild  
 
 ------------------------------------------------------------
  CORE OUTPUT
@@ -45,46 +46,47 @@ Each page becomes something you can:
 
 For every page, Comica produces:
 
-1. SVG (the visible structure)
-   - Panels as independent object groups
-   - Exact bounding regions preserved
-   - Page reconstructed as layered geometry
+1. SVG (structured comic layout)
+   - Panels as independent object groups  
+   - Exact bounding regions preserved  
+   - Page reconstructed as layered geometry  
 
-2. Spatial JSON (the source of truth)
-   - Panel coordinates
-   - Page dimensions
-   - Object metadata
-   - Detection source + confidence
+2. Spatial JSON (source of truth)
+   - Panel coordinates  
+   - Page dimensions  
+   - Object metadata  
+   - Detection source + confidence  
 
-3. Panel Crops (asset layer)
-   - Each panel saved as its own image
-   - Linked directly to its spatial definition
-   - Includes hashes + file metadata
+3. Panel Crops (panel extraction assets)
+   - Each panel saved as its own image  
+   - Linked directly to its spatial definition  
+   - Includes hashes + file metadata  
 
 → JSON defines the system  
 → SVG renders the system  
 
 ------------------------------------------------------------
- WHAT IT DOES WELL
+ COMIC PANEL EXTRACTION & SEGMENTATION
 ------------------------------------------------------------
 
-• Strong panel detection  
-• Clean, consistent panel bounding regions  
-• Preserves page layout faithfully  
-• Produces reusable structured outputs  
-• Rebuilds SVGs directly from JSON  
+COMICA focuses on **panel detection and comic segmentation**.
 
-The panel segmentation is the core strength:
+• Strong panel extraction from PDF and images  
+• Clean, consistent panel bounding boxes  
+• Layout-aware segmentation  
+• Tunable detection profiles  
+• Adaptable across comic styles  
 
-  → stable  
-  → tunable (profiles + thresholds)  
-  → adaptable to different comic styles  
+This is not simple image slicing.
+
+This is **layout-aware comic panel extraction**.
 
 ------------------------------------------------------------
  CURRENT STATE
 ------------------------------------------------------------
 
 ✔ Panel detection: STRONG  
+✔ Comic segmentation: RELIABLE  
 ✔ SVG reconstruction: STABLE  
 ✔ Spatial JSON: SOLID  
 
@@ -94,33 +96,35 @@ The panel segmentation is the core strength:
 • Extremely unconventional pages may break assumptions  
 • Detection is geometry-based, not semantic  
 
-This is a **layout extraction engine**, not a full understanding system.
+This is a **comic layout extraction engine**, not a full understanding system.
 
 ------------------------------------------------------------
  WHY THIS MATTERS
 ------------------------------------------------------------
 
-Most tools flatten comics into images.
+Most comic tools flatten pages into images.
 
-Comica preserves:
+COMICA preserves:
 
   structure
 
-And once structure exists:
+Once comic layout is structured:
 
-  → it can be edited  
-  → it can be analyzed  
-  → it can be rebuilt  
+  → panels can be extracted cleanly  
+  → layouts can be analyzed  
+  → pages can be rebuilt  
 
 ------------------------------------------------------------
  APPLICATIONS
 ------------------------------------------------------------
 
-• Panel-level dataset creation  
-• Layout-aware editing tools  
-• Comic composition analysis  
+• Comic panel extraction datasets  
+• Comic segmentation pipelines  
+• PDF comic parsing  
+• Layout-aware comic editors  
+• Comic dataset generation  
 • Panel indexing and retrieval  
-• Asset extraction pipelines  
+• Comic layout analysis  
 • Foundations for multimodal systems  
 
 ------------------------------------------------------------
@@ -145,33 +149,38 @@ out/
  PHILOSOPHY
 ------------------------------------------------------------
 
-A comic page is not an image.
+A comic page is not just an image.
 
-It is an arrangement.
+It is a layout.
 
-Comica captures the arrangement.
+Comica captures the layout.
 
 ------------------------------------------------------------
  THE PROMISE
 ------------------------------------------------------------
 
 Right now:
-  → Reliable panel extraction  
-  → Clean structural outputs  
+  → Reliable comic panel extraction  
+  → Clean segmentation outputs  
 
 Next:
   → More robust layout handling  
-  → Expanded control + tuning  
+  → Expanded detection control  
   → Deeper structural modeling  
 
 Long term:
   → A foundation for comic-aware systems  
 
 ------------------------------------------------------------
- POSSIBILITES
+ POSSIBILITIES
 ------------------------------------------------------------
 
-If you're working with comics as data, structure, or systems—
+If you're working with:
+
+  comic panel extraction  
+  comic segmentation  
+  comic datasets  
+  comic layout systems  
 
 this gives you something most tools don’t:
 
